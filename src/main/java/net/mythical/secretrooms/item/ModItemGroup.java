@@ -9,5 +9,5 @@ import net.mythical.secretrooms.block.ModBlocks;
 
 public class ModItemGroup {
     public static final ItemGroup OWS = FabricItemGroupBuilder.build(new Identifier(SecretRooms.MOD_ID, "onewaystone"),
-            () -> new ItemStack(ModBlocks.ONEWAYSTONE));
+            () -> new ItemStack(ModBlocks.GHOSTSTONE));
 }

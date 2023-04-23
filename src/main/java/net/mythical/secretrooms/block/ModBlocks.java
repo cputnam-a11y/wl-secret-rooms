@@ -26,13 +26,13 @@ public class ModBlocks {
             new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
     public static final Block HIDDENDOOROAK = registerBlock("hiddendooroak",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ModItemGroup.OWS);
+            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
     public static final Block HIDDENDOORSTONE = registerBlock("hiddendoorstone",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ModItemGroup.OWS);
+            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
     public static final Block HIDDENDOORCOBBLE = registerBlock("hiddendoorcobble",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ModItemGroup.OWS);
+            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
     public static final Block GHOSTCOBBLE = registerBlock("ghostcobble",
             new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);

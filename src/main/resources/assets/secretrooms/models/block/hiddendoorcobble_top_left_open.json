@@ -1,8 +1,7 @@
 {
-  "parent": "minecraft:block/door_top",
+  "parent": "minecraft:block/door_top_left_open",
   "textures": {
     "top": "secretrooms:block/hiddendoorcobble_top",
     "bottom": "secretrooms:block/hiddendoorcobble_bottom"
   }
-
 }
