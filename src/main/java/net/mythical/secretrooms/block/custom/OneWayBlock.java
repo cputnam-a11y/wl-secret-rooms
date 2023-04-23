@@ -1,4 +1,4 @@
-package net.fabricmc.example.block.custom;
+package net.mythical.secretrooms.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;

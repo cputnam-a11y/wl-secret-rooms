@@ -1,13 +1,11 @@
-package net.fabricmc.example;
+package net.mythical.secretrooms;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.example.block.ModBlocks;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.client.render.RenderLayer;
+import net.mythical.secretrooms.block.ModBlocks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+public class SecretRooms implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.

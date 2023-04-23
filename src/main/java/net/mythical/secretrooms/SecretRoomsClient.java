@@ -1,11 +1,11 @@
-package net.fabricmc.example;
+package net.mythical.secretrooms;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.example.block.ModBlocks;
+import net.mythical.secretrooms.block.ModBlocks;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
 
-public class ExampleClientMod implements ClientModInitializer {
+public class SecretRoomsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ONEWAYCOBBLE, RenderLayer.getTranslucent());

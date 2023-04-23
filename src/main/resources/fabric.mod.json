@@ -9,30 +9,30 @@
     "Mythical"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/WatrLogd/wl-secret-rooms/",
+    "sources": "https://github.com/WatrLogd/wl-secret-rooms"
   },
 
   "license": "MIT",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/secretrooms/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.mythical.secretrooms.SecretRooms"
     ],
     "client": [
-      "net.fabricmc.example.ExampleClientMod"
+      "net.mythical.secretrooms.SecretRoomsClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "secretrooms.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.14.19",
     "fabric": "*",
-    "minecraft": "~1.18.2",
+    "minecraft": "~1.19.2",
     "java": ">=17"
   },
   "suggests": {

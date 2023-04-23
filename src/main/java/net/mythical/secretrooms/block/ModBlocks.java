@@ -1,8 +1,7 @@
-package net.fabricmc.example.block;
+package net.mythical.secretrooms.block;
 
-import net.fabricmc.example.ExampleMod;
-import net.fabricmc.example.block.custom.ModDoorBlock;
-import net.fabricmc.example.block.custom.OneWayBlock;
+import net.mythical.secretrooms.block.custom.ModDoorBlock;
+import net.mythical.secretrooms.block.custom.OneWayBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -10,12 +9,8 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
-import net.fabricmc.example.ExampleMod;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
+import net.mythical.secretrooms.SecretRooms;
 
 
 public class ModBlocks {
@@ -49,16 +44,16 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
-        return Registry.register(Registry.BLOCK, new Identifier(ExampleMod.MOD_ID, name), block);
+        return Registry.register(Registry.BLOCK, new Identifier(SecretRooms.MOD_ID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group) {
-        return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name),
+        return Registry.register(Registry.ITEM, new Identifier(SecretRooms.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(group)));
     }
 
     public static void registerModBlocks() {
-        System.out.println("Registering Mod Blocks for " + ExampleMod.MOD_ID);
+        System.out.println("Registering Mod Blocks for " + SecretRooms.MOD_ID);
     }
 
 }
