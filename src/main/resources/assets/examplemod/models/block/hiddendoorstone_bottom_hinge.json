@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_rh",
+  "textures": {
+    "top": "examplemod:block/hiddendoorstone_top",
+    "bottom": "examplemod:block/hiddendoorstone_bottom"
+  }
+
+}

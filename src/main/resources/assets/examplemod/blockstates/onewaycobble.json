@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "examplemod:block/onewaycobble", "uvlock": true },
+    "facing=east":  { "model": "examplemod:block/onewaycobble", "y":  90, "uvlock": true },
+    "facing=south": { "model": "examplemod:block/onewaycobble", "y": 180, "uvlock": true },
+    "facing=west":  { "model": "examplemod:block/onewaycobble", "y": 270, "uvlock": true }
+    }
+  }
