@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/door_top_rh",
   "textures": {
-    "top": "examplemod:block/hiddendoorcobble_top",
-    "bottom": "examplemod:block/hiddendoorcobble_bottom"
+    "top": "secretrooms:block/hiddendoorcobble_top",
+    "bottom": "secretrooms:block/hiddendoorcobble_bottom"
   }
 
 }

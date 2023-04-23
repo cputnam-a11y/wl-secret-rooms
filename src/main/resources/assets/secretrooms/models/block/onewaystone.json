@@ -3,9 +3,9 @@
 	"texture_size": [64, 64],
 	"parent": "minecraft:block/cube",
 	"textures": {
-		"0": "examplemod:block/invis",
-		"1": "examplemod:block/onewaystone",
-		"particle": "examplemod:block/onewaystone"
+		"0": "secretrooms:block/invis",
+		"1": "secretrooms:block/onewaystone",
+		"particle": "secretrooms:block/onewaystone"
 	},
 	"elements": [
 		{
