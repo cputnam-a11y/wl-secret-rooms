@@ -11,36 +11,37 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.mythical.secretrooms.SecretRooms;
+import net.mythical.secretrooms.item.ModItemGroup;
 
 
 public class ModBlocks {
 
     public static final Block ONEWAYOAK = registerBlock("onewayoak",
-            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ItemGroup.BUILDING_BLOCKS);
+            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
     public static final Block ONEWAYSTONE = registerBlock("onewaystone",
-            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ItemGroup.BUILDING_BLOCKS);
+            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()),ModItemGroup.OWS);
 
     public static final Block ONEWAYCOBBLE = registerBlock("onewaycobble",
-            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ItemGroup.BUILDING_BLOCKS);
+            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
     public static final Block HIDDENDOOROAK = registerBlock("hiddendooroak",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ItemGroup.BUILDING_BLOCKS);
+            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ModItemGroup.OWS);
 
     public static final Block HIDDENDOORSTONE = registerBlock("hiddendoorstone",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ItemGroup.BUILDING_BLOCKS);
+            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ModItemGroup.OWS);
 
     public static final Block HIDDENDOORCOBBLE = registerBlock("hiddendoorcobble",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ItemGroup.BUILDING_BLOCKS);
+            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool()), ModItemGroup.OWS);
 
     public static final Block GHOSTCOBBLE = registerBlock("ghostcobble",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ItemGroup.BUILDING_BLOCKS);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
 
     public static final Block GHOSTOAK = registerBlock("ghostoak",
-            new Block(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().noCollision()), ItemGroup.BUILDING_BLOCKS);
+            new Block(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
 
     public static final Block GHOSTSTONE = registerBlock("ghoststone",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ItemGroup.BUILDING_BLOCKS);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
@@ -49,7 +50,7 @@ public class ModBlocks {
 
     private static Item registerBlockItem(String name, Block block, ItemGroup group) {
         return Registry.register(Registry.ITEM, new Identifier(SecretRooms.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(group)));
+                new BlockItem(block, new FabricItemSettings().group(ModItemGroup.OWS)));
     }
 
     public static void registerModBlocks() {

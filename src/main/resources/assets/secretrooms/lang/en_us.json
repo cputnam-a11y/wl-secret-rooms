@@ -7,5 +7,7 @@
   "block.secretrooms.hiddendoorstone": "Hidden Door (Stone)",
   "block.secretrooms.ghostoak": "Ghost Block (Oak)",
   "block.secretrooms.ghoststone": "Ghost Block (Stone)",
-  "block.secretrooms.ghostcobble": "Ghost Block (Cobblestone)"
+  "block.secretrooms.ghostcobble": "Ghost Block (Cobblestone)",
+
+  "itemGroup.secretrooms.onewaystone": "Secret Rooms"
 }
