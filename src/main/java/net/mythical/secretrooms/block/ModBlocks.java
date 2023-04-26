@@ -42,6 +42,8 @@ public class ModBlocks {
 
     public static final Block GHOSTSTONE = registerBlock("ghoststone",
             new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
+    //public static final Block TORCHLEVER = registerBlock("torchlever",
+    //        new LeverBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
