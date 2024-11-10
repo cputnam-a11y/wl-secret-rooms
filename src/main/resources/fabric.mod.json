@@ -23,6 +23,9 @@
     ],
     "client": [
       "net.mythical.secretrooms.SecretRoomsClient"
+    ],
+    "fabric-datagen": [
+      "net.mythical.secretrooms.datagen.SecretRoomsDataGenerator"
     ]
   },
   "mixins": [
@@ -30,12 +33,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.19",
+    "fabricloader": ">=0.16.7",
     "fabric": "*",
-    "minecraft": "~1.19.2",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "minecraft": "~1.21.0",
+    "java": ">=21"
   }
 }

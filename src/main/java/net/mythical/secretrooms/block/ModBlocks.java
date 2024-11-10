@@ -1,58 +1,165 @@
 package net.mythical.secretrooms.block;
 
-import net.mythical.secretrooms.block.custom.ModDoorBlock;
-import net.mythical.secretrooms.block.custom.OneWayBlock;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.mythical.secretrooms.SecretRooms;
-import net.mythical.secretrooms.item.ModItemGroup;
+import net.mythical.secretrooms.block.custom.ModDoorBlock;
+import net.mythical.secretrooms.block.custom.OneWayBlock;
 
+import static net.mythical.secretrooms.block.SettingsCloner.copy;
 
 public class ModBlocks {
+    public static final AbstractBlock.Settings GLASS_SETTINGS =
+            AbstractBlock.Settings
+                    .create()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sounds(BlockSoundGroup.GLASS)
+                    .nonOpaque()
+                    .allowsSpawning(Blocks::never)
+                    .solidBlock(Blocks::never)
+                    .suffocates(Blocks::never)
+                    .blockVision(Blocks::never);
+    public static final AbstractBlock.Settings OAK_DOOR_SETTINGS =
+            AbstractBlock.Settings
+                    .create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(3.0F)
+                    .nonOpaque()
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY);
+    public static final Block ONE_WAY_OAK =
+            registerBlock(
+                    "onewayoak",
+                    new OneWayBlock(
+                            copy(GLASS_SETTINGS)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .nonOpaque()
+                                    .mapColor(MapColor.BROWN)
+                    )
+            );
 
-    public static final Block ONEWAYOAK = registerBlock("onewayoak",
-            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
 
-    public static final Block ONEWAYSTONE = registerBlock("onewaystone",
-            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()),ModItemGroup.OWS);
+    public static final Block ONE_WAY_STONE =
+            registerBlock(
+                    "onewaystone",
+                    new OneWayBlock(
+                            copy(GLASS_SETTINGS)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .nonOpaque()
+                                    .mapColor(MapColor.STONE_GRAY)
+                    )
+            );
 
-    public static final Block ONEWAYCOBBLE = registerBlock("onewaycobble",
-            new OneWayBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
+    public static final Block ONE_WAY_COBBLE =
+            registerBlock(
+                    "onewaycobble",
+                    new OneWayBlock(
+                            copy(GLASS_SETTINGS)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .nonOpaque()
+                                    .mapColor(MapColor.STONE_GRAY)
+                    )
+            );
 
-    public static final Block HIDDENDOOROAK = registerBlock("hiddendooroak",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
+    public static final Block HIDDEN_DOOR_OAK =
+            registerBlock(
+                    "hiddendooroak",
+                    new ModDoorBlock(
+                            BlockSetType.OAK,
+                            copy(OAK_DOOR_SETTINGS)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .nonOpaque()
+                    )
+            );
 
-    public static final Block HIDDENDOORSTONE = registerBlock("hiddendoorstone",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
+    public static final Block HIDDEN_DOOR_STONE =
+            registerBlock(
+                    "hiddendoorstone",
+                    new ModDoorBlock(
+                            BlockSetType.OAK,
+                            copy(OAK_DOOR_SETTINGS)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .nonOpaque())
+            );
 
-    public static final Block HIDDENDOORCOBBLE = registerBlock("hiddendoorcobble",
-            new ModDoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().nonOpaque()), ModItemGroup.OWS);
+    public static final Block HIDDEN_DOOR_COBBLE =
+            registerBlock(
+                    "hiddendoorcobble",
+                    new ModDoorBlock(
+                            BlockSetType.OAK,
+                            copy(OAK_DOOR_SETTINGS)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .nonOpaque()
 
-    public static final Block GHOSTCOBBLE = registerBlock("ghostcobble",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
+                    )
+            );
 
-    public static final Block GHOSTOAK = registerBlock("ghostoak",
-            new Block(FabricBlockSettings.of(Material.WOOD).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
+    public static final Block GHOST_COBBLE =
+            registerBlock(
+                    "ghostcobble",
+                    new Block(
+                            Block.Settings
+                                    .copy(Blocks.COBBLESTONE)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .noCollision()
+                    )
+            );
 
-    public static final Block GHOSTSTONE = registerBlock("ghoststone",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
-    //public static final Block TORCHLEVER = registerBlock("torchlever",
-    //        new LeverBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()), ModItemGroup.OWS);
+    public static final Block GHOST_OAK =
+            registerBlock(
+                    "ghostoak",
+                    new Block(
+                            Block.Settings
+                                    .copy(Blocks.OAK_LOG)
+                                    .mapColor(MapColor.OAK_TAN)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .noCollision()
+                    )
+            );
 
-    private static Block registerBlock(String name, Block block, ItemGroup group) {
-        registerBlockItem(name, block, group);
-        return Registry.register(Registry.BLOCK, new Identifier(SecretRooms.MOD_ID, name), block);
+    public static final Block GHOST_STONE =
+            registerBlock(
+                    "ghoststone",
+                    new Block(
+                            Block.Settings
+                                    .copy(Blocks.STONE)
+                                    .strength(4.0f)
+                                    .requiresTool()
+                                    .noCollision()
+                    )
+            );
+    //public static final Block TORCH_LEVER = registerBlock("torchlever",
+    //        new LeverBlock(Block.Settings.of(Material.STONE).strength(4.0f).requiresTool().noCollision()));
+
+    private static Block registerBlock(String name, Block block) {
+        registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(SecretRooms.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block, ItemGroup group) {
-        return Registry.register(Registry.ITEM, new Identifier(SecretRooms.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(ModItemGroup.OWS)));
+    @SuppressWarnings("UnusedReturnValue")
+    private static Item registerBlockItem(String name, Block block) {
+        return Registry.register(
+                Registries.ITEM,
+                Identifier.of(SecretRooms.MOD_ID, name),
+                new BlockItem(block, new Item.Settings())
+        );
     }
 
     public static void registerModBlocks() {

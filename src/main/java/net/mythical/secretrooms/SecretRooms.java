@@ -2,6 +2,7 @@ package net.mythical.secretrooms;
 
 import net.fabricmc.api.ModInitializer;
 import net.mythical.secretrooms.block.ModBlocks;
+import net.mythical.secretrooms.item.ModItemGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +16,6 @@ public class SecretRooms implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModBlocks.registerModBlocks();
+		ModItemGroup.register();
 	}
 }

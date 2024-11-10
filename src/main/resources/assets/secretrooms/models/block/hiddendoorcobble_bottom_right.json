@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right",
-  "textures": {
-    "top": "secretrooms:block/hiddendoorcobble_top",
-    "bottom": "secretrooms:block/hiddendoorcobble_bottom"
-  }
-}

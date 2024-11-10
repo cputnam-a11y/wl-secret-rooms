@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    },
+    "C": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "###",
+    "CCC",
+    "CCC"
+  ],
+  "result": {
+    "count": 3,
+    "id": "secretrooms:onewaystone"
+  }
+}

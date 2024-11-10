@@ -12,12 +12,17 @@ import net.minecraft.world.BlockView;
 
 import static net.minecraft.block.ChestBlock.FACING;
 
-public class OneWayBlock extends GlassBlock {
+public class OneWayBlock extends TranslucentBlock {
 
 
-    public OneWayBlock(Settings settings) {
-        super(settings.of(Material.STONE).nonOpaque());
-        setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+    public OneWayBlock(AbstractBlock.Settings settings) {
+        super(settings.nonOpaque());
+        this.setDefaultState(
+                this.getDefaultState().with(
+                        Properties.HORIZONTAL_FACING,
+                        Direction.NORTH
+                )
+        );
     }
 
     @Override
@@ -28,23 +33,15 @@ public class OneWayBlock extends GlassBlock {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx) {
         Direction dir = state.get(FACING);
-        switch(dir) {
-            case NORTH:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
-            case SOUTH:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
-            case EAST:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
-            case WEST:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
-            default:
-                return VoxelShapes.fullCube();
-        }
+        return switch (dir) {
+            case NORTH, WEST, SOUTH, EAST -> VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+            default -> VoxelShapes.fullCube();
+        };
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
+        return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerLookDirection().getOpposite());
     }
 
 }
