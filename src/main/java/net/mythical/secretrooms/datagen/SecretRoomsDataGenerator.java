@@ -8,6 +8,7 @@ public class SecretRoomsDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(SecretRoomsRecipeProvider::new);
-        pack.addProvider(SecretRoomsModelProvider::new);
+        pack.addProvider(SecretRoomsBlockModelProvider::new);
+        pack.addProvider(SecretRoomsEnglishLangProvider::new);
     }
 }

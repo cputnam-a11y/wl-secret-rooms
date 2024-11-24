@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "secretrooms:block/onewaystone",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north": {
+      "model": "secretrooms:block/onewaystone",
+      "uvlock": true
+    },
+    "facing=south": {
+      "model": "secretrooms:block/onewaystone",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "secretrooms:block/onewaystone",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

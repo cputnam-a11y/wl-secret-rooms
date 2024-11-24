@@ -1,0 +1,12 @@
+{
+  "block.secretrooms.ghostcobble": "Ghost Block (Cobblestone)",
+  "block.secretrooms.ghostoak": "Ghost Block (Oak)",
+  "block.secretrooms.ghoststone": "Ghost Block (Stone)",
+  "block.secretrooms.hiddendoorcobble": "Hidden Door (Cobblestone)",
+  "block.secretrooms.hiddendooroak": "Hidden Door (Oak Planks)",
+  "block.secretrooms.hiddendoorstone": "Hidden Door (Stone)",
+  "block.secretrooms.onewaycobble": "One Way Wall (Cobblestone)",
+  "block.secretrooms.onewayoak": "One Way Wall (Oak)",
+  "block.secretrooms.onewaystone": "One Way Wall (Stone)",
+  "itemGroup.secretrooms.onewaystone": "Secret Rooms"
+}
