@@ -23,7 +23,7 @@ public class ModItemGroup {
     }));
 
     public static ItemGroup register(String id, ItemGroup.Builder itemGroup) {
-        return Registry.register(Registries.ITEM_GROUP, Identifier.of(SecretRooms.MOD_ID, id), itemGroup.displayName(Text.translatable("itemgroup." + SecretRooms.MOD_ID + "." + id.replace("/", "."))).build());
+        return Registry.register(Registries.ITEM_GROUP, Identifier.of(SecretRooms.MOD_ID, id), itemGroup.displayName(Text.translatable("itemGroup." + SecretRooms.MOD_ID + "." + id.replace("/", "."))).build());
     }
     public static void register() {}
 }
